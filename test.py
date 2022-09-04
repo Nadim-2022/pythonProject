@@ -16,3 +16,12 @@ elif answer == "TOPSECRET":
     print("you are Ok")
 #else:
 #    print("Not Correct")
+
+n = 0
+while n < 3:
+    print(f"Value is {n+1:d}")
+    n = n + 1
+print("List is Ready")
+
+
+

@@ -7,18 +7,47 @@ if zander < 42:
     print(f"Release the zander back into the lack, because zander shor by  {42-zander}")
 
 # phase 2
-cabin_class = ("LUX", "A", "B", "C", "D")
-LUX = input("Enter the cabin class of a cruise ship:")
-A = input("Enter the cabin class of a cruise ship:")
-B = input("Enter the cabin class of a cruise ship:")
-C = input("Enter the cabin class of a cruise ship:")
-if LUX == LUX:
+answer = input("Enter the cabin class of a cruise ship:")
+
+if answer == "LUX":
     print("Upper-deck cabin with a balcony.")
-if A == A:
+elif answer == "A":
     print("Above the car deck, equipped with a window.")
-if B == B:
+elif answer == "B":
     print("Windowless cabin above the car deck.")
-if C == C:
+elif answer == "C":
     print("Windowless cabin below the car deck.")
 else:
     print("Invalid cabin class")
+
+#phase 3
+gender = ("Male", "Female")
+
+q1 = input("What is your biological gender ?")
+
+if q1 == "Male":
+    q2 = int(input("What is your hemoglobin value (g/l)"))
+    if q2 > 167:
+        print("High")
+    elif q2 < 134:
+             print("Low")
+    else:
+        print("Normal")
+elif q1 == "Female":
+    q2 = int(input("What is your hemoglobin value (g/l)"))
+    if q2 > 155:
+        print("High")
+    elif q2 < 117:
+        print("Low")
+    else:
+        print("Normal")
+
+#phase 4
+year = int(input("Enter a Year"))
+
+if (year % 4 == 0) and (year % 100 != 0):
+    print("This is leap year")
+elif (year % 400 == 0) and (year % 100 == 0):
+    print("This is a leap year")
+else:
+    print("This is not a leap year")

@@ -43,6 +43,8 @@ l = float(input("Enter a mass in lots ?"))
 talent = float(t)*20*32*13.3
 pound = float(p)*32*13.3
 lot = float(l)*13.3
+#weight =(talents*20+pound)*32+lots)*0.0133
+#print("The weight in modern units:\n{int(weight):d} kilograms and {1000.0*(weight-int(weight)):.2f}grams.")
 wight = int(talent+pound+lot)//1000
 g = float(talent+pound+lot) % 1000
 print("The weight in modern units: " + str(wight), f"kilograms and :  {g:0.2f} grams")
