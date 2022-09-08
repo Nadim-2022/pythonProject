@@ -1,10 +1,12 @@
-
-
-n = int(input("Enter the numbers"))
-while n != 0:
-    if n == "":
+while True:
+    number = int(input("Enter the number : "))
+    if number <= 0:
         break
-    print("Input is, " + str(n))
-    n = int(input("Enter the numbers"))
-else:
-    print("ALl is well")
+    factorial = 1
+    new = 1
+    while new <= number:
+        factorial *= new
+        new += 1
+    print(f"The factorial of the number {number} is {factorial}")
+print("Thank you and bye")
+
