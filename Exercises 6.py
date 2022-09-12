@@ -57,11 +57,20 @@ print()
 
 
 #Phase 6
-def parameter (size, price):
-    cen_meter = size*100
+import math
+def parameter(size, price):
+    cen_meter = size/100
     radius = cen_meter / 2
-    sq_meter = radius * radius
-    uni_price = sq_meter / price
-    print(uni_price)
+    sq_meter = (radius * radius)*math.pi
+    uni_price = price/sq_meter
+    return f"{uni_price:0.02f}"
 
-parameter(100,12)
+d_meter_1 = float(input("Enter the diameter for pizza 1 in centimeters : "))
+p_1 = float(input("Enter the price for pizza 1 :"))
+d_meter_2 = float(input("Enter the diameter for pizza 2 in centimeters : "))
+p_2 = float(input("Enter the price for pizza 2 :"))
+
+if parameter(d_meter_1,p_1) < parameter(d_meter_2,p_2):
+    print("Pizza 1 has better value for money, price of per square meter is : ", parameter(d_meter_1,p_1))
+else:
+    print("Pizza 2 has better value for money, price of per square meter is :", parameter(d_meter_2,p_2))
