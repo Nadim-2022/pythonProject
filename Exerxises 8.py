@@ -29,7 +29,6 @@ def find_airport(ICAO):
 
 ICAO = input("Give the ICAO code:")
 find_airport(ICAO)
-print("These employees have better salary than their bosses:")
 
 """""
 2. Write a program that asks the user to enter the area code (for example FI) and prints out the airports located in that 
@@ -45,3 +44,12 @@ def find_airport_ordered(area_code):
             print(f"Airport name: {tbl_row[0]}, type: {tbl_row[1]}")
 area_code = input("Give the ICAO code:")
 find_airport_ordered(area_code)
+
+"""""
+3. Write a program that asks the user to enter the ICAO codes of two airports.
+The program prints out the distance between the two airports in kilometers.
+The calculation is based on the airport coordinates fetched from the database.
+Calculate the distance using the geopy library: https://geopy.readthedocs.io/en/stable/.
+Install the library by selecting View / Tool Windows / Python Packages in your PyCharm IDE, 
+write geopy into the search field and finish the installation.
+"""""
