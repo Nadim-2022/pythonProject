@@ -57,7 +57,6 @@ write geopy into the search field and finish the installation.
 
 def airpot_distance(ICAO_1,ICAO_2):
     sql = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident ='" + ICAO_1 + "' or ident ='" + ICAO_2 + "'"
-    #sql_1 = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident ='" + ICAO_2 +"'"
     db_cursor = db_connection.cursor()
     db_cursor.execute(sql)
     query_result = db_cursor.fetchall()
