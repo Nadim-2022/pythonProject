@@ -1,4 +1,5 @@
 import mysql.connector
+from geopy import distance
 
 """""
 1. Write a program that asks the user to enter the ICAO code of an airport.
@@ -53,3 +54,16 @@ Calculate the distance using the geopy library: https://geopy.readthedocs.io/en/
 Install the library by selecting View / Tool Windows / Python Packages in your PyCharm IDE, 
 write geopy into the search field and finish the installation.
 """""
+
+def airpot_distance(ICAO_1,ICAO_2):
+    sql = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident ='" + ICAO_1 + "' or ident ='" + ICAO_2 + "'"
+    #sql_1 = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident ='" + ICAO_2 +"'"
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(sql)
+    query_result = db_cursor.fetchall()
+    print(distance.distance(query_result[0], query_result[1]))
+ICAO_1 = input("Give the ICAO code:")
+ICAO_2 = input("Give the ICAO code:")
+airpot_distance(ICAO_1,ICAO_2)
+
+
