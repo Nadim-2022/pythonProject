@@ -35,6 +35,26 @@ If the user chooses to quit, the program execution ends. The user can choose a n
 (The ICAO code is an identifier that is unique to each airport. For example, the ICAO code of Helsinki-Vantaa Airport is EFHK. 
 You can easily find the ICAO codes of different airports online.)
 """
+print("Please choose a option:\n a) Enter a new airport (N)\n b) Fetch the information (F)\n c) Want to quit (Q)")
+n = input("Please choose a option: ")
+dictionary = {}
+dictionary_2 = {"EFHK":"Helsinki-Vantaa Airport",
+                "EFHF":"Helsinki-Malmi Airport",
+                "EFIV":"Ivalo Airport"}
 
+while n != "Q":
+    if n == "N":
+        n_1 = input("Enter the ICAO code of the airport:")
+        n_2 = input("Enter the name of the airport:")
+        dictionary.update({n_1:n_2})
+        print(dictionary)
+        n = input("Please choose a option: ")
+    if n == "F":
+        n_3 = input("Enter the ICAO code of the airport:")
+        print(dictionary_2.get(n_3))
+        n = input("Please choose a option: ")
+    else:
+        break
+print("Worng input")
 
 
