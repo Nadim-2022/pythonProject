@@ -43,7 +43,7 @@ def find_airport_ordered(area_code):
     if db_cursor.rowcount > 0:
         for tbl_row in query_result:
             print(f"Airport name: {tbl_row[0]}, type: {tbl_row[1]}")
-area_code = input("Give the ICAO code:")
+area_code = input("Give the area code:")
 find_airport_ordered(area_code)
 
 """""
