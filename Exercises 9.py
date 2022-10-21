@@ -120,6 +120,7 @@ Each car is made to drive for one hour. This is done with the drive method.
 The race continues until one of the cars has advanced at least 10,000 kilometers.
 Finally, the properties of each car are printed out formatted into a clear table.
 """""
+import random
 class Car:
 
     def __init__(self, registration, maxspeed):
@@ -144,7 +145,7 @@ def distance(car_list):
     for i in car_list:
         if i.distance > 10000:
             return True
-        return False
+
 def update_accerelate(car_list):
     for i in car_list:
         i.accerelate(random.randint(-10, 15))
