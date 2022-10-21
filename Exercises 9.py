@@ -28,3 +28,96 @@ Extend the main program so that the speed of the car is first increased by +30 k
 Then print out the current speed of the car. Finally, use the emergency brake by forcing a -200 km/h change on the speed and then print out the final speed.
 The travelled distance does not have to be updated yet.
 """
+
+class Car:
+
+    def __init__(self, registration, maxspeed):
+        self.registration = registration
+        self.maxspeed = maxspeed
+        self.currentspeed = 0
+        self.distance = 0
+    def accerelate(self, addspeed):
+        accelaretion = self.currentspeed + addspeed
+        if self.maxspeed > accelaretion:
+            self.currentspeed+=addspeed
+            if  accelaretion < 0:
+                self.currentspeed = 0
+
+
+
+
+
+speed = 30
+vehicle = Car("ABC-123", 142)
+print(f"Car's registration number: {vehicle.registration}")
+print(f"Car's maximum speed: {vehicle.maxspeed}")
+print(f"Car's current speed: {vehicle.currentspeed}")
+print(f"Travelled distance : {vehicle.distance}")
+vehicle.accerelate(30)
+print(vehicle.currentspeed)
+vehicle.accerelate(70)
+print(vehicle.currentspeed)
+vehicle.accerelate(60)
+print(vehicle.currentspeed)
+vehicle.accerelate(-200)
+print(vehicle.currentspeed)
+
+"""""
+3. Again, extend the program by adding a new drive method that receives the number of hours as a parameter. 
+The method increases the travelled distance by how much the car has travelled in constant speed in the given time. 
+Example: The travelled distance of car object is 2000 km. The current speed is 60 km/h. Method call car.drive(1.5) increases the travelled distance to 2090 km.
+"""
+class Car:
+
+    def __init__(self, registration, maxspeed):
+        self.registration = registration
+        self.maxspeed = maxspeed
+        self.currentspeed = 0
+        self.distance = 0
+    def accerelate(self, addspeed):
+        accelaretion = self.currentspeed + addspeed
+        if self.maxspeed > accelaretion:
+            self.currentspeed+=addspeed
+            if  accelaretion < 0:
+                self.currentspeed = 0
+    def drive(self, hours):
+        self.distance = self.distance + self.currentspeed*hours
+
+
+
+
+
+speed = 30
+vehicle = Car("ABC-123", 142)
+print(f"Car's registration number: {vehicle.registration}")
+print(f"Car's maximum speed: {vehicle.maxspeed}")
+print(f"Car's current speed: {vehicle.currentspeed}")
+print(f"Travelled distance : {vehicle.distance}")
+vehicle.accerelate(30)
+print(vehicle.currentspeed)
+vehicle.accerelate(70)
+print(vehicle.currentspeed)
+vehicle.accerelate(50)
+print(vehicle.currentspeed)
+vehicle.accerelate(-200)
+print(vehicle.currentspeed)
+
+vehicle.distance = 2000
+vehicle.accerelate(60)
+vehicle.drive(1.5)
+
+print(vehicle.distance)
+
+"""""
+Now we will program a car race. The travelled distance of a new car is initialized as zero. At the beginning of the main 
+program, create a list that consists of 10 car objects created using a loop. The maximum speed of each new car is a random
+value between 100 km/h and 200 km/h. The registration numbers are created as follows: "ABC-1", "ABC-2" and so on. Now the race begins.
+One per every hour of the race, the following operations are performed:
+
+The speed of each car is changed so that the change in speed is a random value between -10 km/h and +15 km/h. 
+This is done using the accerelate method.
+Each car is made to drive for one hour. This is done with the drive method.
+The race continues until one of the cars has advanced at least 10,000 kilometers.
+Finally, the properties of each car are printed out formatted into a clear table.
+"""""
+
