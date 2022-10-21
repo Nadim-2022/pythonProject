@@ -40,3 +40,42 @@ It calls the initializer of the base class to set the first two properties and t
 Write a main program where you create one electric car (ABC-15, 180 km/h, 52.5 kWh) and one gasoline car (ACD-123, 165 km/h, 32.3 l). 
 Select speeds for both cars, make them drive for three hours and print out the values of their kilometer counters.
 """
+class Car:
+
+    def __init__(self, registration, maxspeed):
+        self.registration = registration
+        self.maxspeed = maxspeed
+        self.currentspeed = 0
+        self.distance = 0
+    def accerelate(self, addspeed):
+        accelaretion = self.currentspeed + addspeed
+        if self.maxspeed > accelaretion:
+            self.currentspeed+=addspeed
+            if  accelaretion < 0:
+                self.currentspeed = 0
+    def drive(self, hours):
+        self.distance = self.distance + self.currentspeed*hours
+
+class ElectricCar(Car):
+    def __init__(self, registration, maxspeed, b_capacity):
+        self.b_capacity = b_capacity
+        super().__init__(registration, maxspeed)
+    def print_out(self):
+        print(self.registration, self.maxspeed, "km/h", self.b_capacity, "Kwh", self.distance, " km")
+class GasolineCar(Car):
+    def __init__(self, registration, maxspeed, l_capacity):
+        self.l_capacity = l_capacity
+        super().__init__(registration, maxspeed)
+    def print_out(self):
+        print(self.registration, self.maxspeed, "km/h", self.l_capacity, "liters", self.distance, " km")
+
+
+
+eve = ElectricCar("ABC-15", 180, 52.5)
+gascar = GasolineCar("ABC-123",165, 32.3)
+eve.accerelate(100)
+gascar.accerelate(100)
+eve.drive(3)
+gascar.drive(3)
+eve.print_out()
+gascar.print_out()
